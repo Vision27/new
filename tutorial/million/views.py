@@ -7,7 +7,11 @@ from rest_framework.response import *
 from django.http import Http404
 from rest_framework.views import APIView
 
-class SexView(generics.ListAPIView):
-    queryset =Sex.objects.all()
-    serializer_class = Sex_Serializer
+class GroupsView(generics.ListCreateAPIView):
+    queryset =Groups.objects.all()
+    serializer_class = Groups_Serializer
+
+class ConcertView(generics.ListCreateAPIView):
+    queryset =Concert.objects.all()
+    serializer_class = Concert_Serializer
     

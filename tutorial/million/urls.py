@@ -4,6 +4,6 @@ from rest_framework.urlpatterns import format_suffix_patterns
 from django.conf.urls import include
 
 urlpatterns=[
-    path('sex',views.Sexview.as_view()),
+    path('Groups',views.GroupsView.as_view()),
 ]
 urlpatterns=format_suffix_patterns(urlpatterns)

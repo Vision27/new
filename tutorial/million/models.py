@@ -3,12 +3,13 @@ from django.db import models
 
 # Create your models here.
 class Singer(models.Model):
-
     singer_sex = models.CharField('Sex of singer', max_length=20, default='')
-    singer_age = models.IntegerField('Age of singer', max_length=2, default='')
+    singer_age = models.IntegerField('Age of singer', default='')
     singer_style = models.CharField('Style of singer', max_length=20, default='')
     singer_reputation = models.CharField('Reputation of singer', max_length=20, default='')
     singer_price = models.CharField('Price of singer', max_length=20, default='')
+    owner = models.ForeignKey('auth.user', related_name='singer_owner', on_delete=models.CASCADE, default='')
+
     def __str__(self):
         return self.singer_price
 
